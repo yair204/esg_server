@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+</head>
+<body>
+
+<h1>Products</h1>
+  
+<ul>
+  {% for product in myproduct %}
+    <li>
+      <strong>Name:</strong> {{ product.name }}, 
+      <strong>Amount:</strong> {{ product.amount }}, 
+      <strong>Title:</strong> {{ product.title }}, 
+      <strong>Location:</strong> {{ product.location }},
+      <strong>Description:</strong> {{ product.description }}
+    </li>
+  {% endfor %}
+</ul>
+<form method = "post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Upload</button>
+</form>
+</body>
+</html>
